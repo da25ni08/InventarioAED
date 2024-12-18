@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="src.inventario.controllers.AulaController">
+    <top>
+        <Label text="Gestión de Aulas" styleClass="h1, text-center" BorderPane.alignment="CENTER" />
+    </top>
+    <center>
+        <TableView fx:id="aulaTable" styleClass="table, table-striped" prefHeight="200.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="numeracionColumn" text="Numeración" styleClass="text-center" />
+                <TableColumn fx:id="descripcionColumn" text="Descripción" styleClass="text-center" />
+                <TableColumn fx:id="ipColumn" text="IP" styleClass="text-center" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <VBox spacing="10" alignment="CENTER" BorderPane.alignment="CENTER">
+            <GridPane hgap="10" vgap="10" styleClass="form">
+                <Label text="Numeración:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="form-label" />
+                <TextField fx:id="numeracionField" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="form-control" />
+
+                <Label text="Descripción:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="form-label" />
+                <TextField fx:id="descripcionField" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="form-control" />
+
+                <Label text="IP:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="form-label" />
+                <TextField fx:id="ipField" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="form-control" />
+            </GridPane>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Añadir" onAction="#handleAddAula" styleClass="btn, btn-primary" />
+                <Button text="Actualizar" onAction="#handleUpdateAula" styleClass="btn, btn-warning" />
+                <Button text="Eliminar" onAction="#handleDeleteAula" styleClass="btn, btn-danger" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
+

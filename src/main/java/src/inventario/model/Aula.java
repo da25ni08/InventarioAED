@@ -1,13 +1,13 @@
 package src.inventario.model;
 
 import jakarta.persistence.*;
-
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "aula", schema = "inventario")
 public class Aula {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IdAula", nullable = false)
@@ -23,8 +23,20 @@ public class Aula {
     private String ip;
 
     @OneToMany(mappedBy = "idAula")
-    private Set<src.inventario.model.Marcaje> marcajes = new LinkedHashSet<>();
+    private Set<Marcaje> marcajes = new LinkedHashSet<>();
 
+    // Constructor sin argumentos (obligatorio para Hibernate)
+    public Aula() {
+    }
+
+    // Constructor con parámetros
+    public Aula(String numeracion, String descripcion, String ip) {
+        this.numeracion = numeracion;
+        this.descripcion = descripcion;
+        this.ip = ip;
+    }
+
+    // Getters y setters
     public Integer getId() {
         return id;
     }
@@ -57,12 +69,11 @@ public class Aula {
         this.ip = ip;
     }
 
-    public Set<src.inventario.model.Marcaje> getMarcajes() {
+    public Set<Marcaje> getMarcajes() {
         return marcajes;
     }
 
-    public void setMarcajes(Set<src.inventario.model.Marcaje> marcajes) {
+    public void setMarcajes(Set<Marcaje> marcajes) {
         this.marcajes = marcajes;
     }
-
 }

@@ -10,4 +10,8 @@ module src.inventario {
 
     opens src.inventario to javafx.fxml;
     exports src.inventario;
+    exports src.inventario.model;
+    opens src.inventario.controllers to javafx.fxml;
+    opens src.inventario.model to org.hibernate.orm.core;
+    exports src.inventario.controllers;
 }
