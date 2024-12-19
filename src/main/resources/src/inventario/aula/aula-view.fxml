@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="src.inventario.controller.aula.AulaController" spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+    <TableView fx:id="aulaTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="numeracionColumn" text="Numeración" />
+            <TableColumn fx:id="descripcionColumn" text="Descripción" />
+            <TableColumn fx:id="ipColumn" text="IP" />
+        </columns>
+    </TableView>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Crear" onAction="#handleCrear" />
+        <Button text="Modificar" onAction="#handleModificar" />
+        <Button text="Eliminar" onAction="#handleEliminar" />
+    </HBox>
+</VBox>
+

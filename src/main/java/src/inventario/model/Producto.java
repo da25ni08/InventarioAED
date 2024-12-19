@@ -1,7 +1,6 @@
 package src.inventario.model;
 
 import jakarta.persistence.*;
-
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -9,6 +8,7 @@ import java.util.Set;
 @Table(name = "productos", schema = "inventario")
 public class Producto {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IdProducto", nullable = false)
     private Integer id;
 
@@ -23,6 +23,15 @@ public class Producto {
 
     @OneToMany(mappedBy = "idProducto")
     private Set<Marcaje> marcajes = new LinkedHashSet<>();
+
+    public Producto() {
+    }
+
+    public Producto(String descripcion, Integer ean13, String keyRFID) {
+        this.descripcion = descripcion;
+        this.ean13 = ean13;
+        this.keyRFID = keyRFID;
+    }
 
     public Integer getId() {
         return id;
@@ -63,5 +72,4 @@ public class Producto {
     public void setMarcajes(Set<Marcaje> marcajes) {
         this.marcajes = marcajes;
     }
-
 }

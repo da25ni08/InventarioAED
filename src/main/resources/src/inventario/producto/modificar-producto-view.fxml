@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="src.inventario.controller.producto.ModificarProductoController">
+    <top>
+        <Label text="Modificar Producto" style="-fx-font-size: 20px; -fx-font-weight: bold;" alignment="CENTER" BorderPane.alignment="CENTER" />
+    </top>
+    <center>
+        <fx:include fx:id="formularioProducto" source="formulario-producto.fxml" />
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+            <Button text="Modificar" onAction="#handleGuardar" />
+            <Button text="Cancelar" onAction="#handleCancelar" />
+        </HBox>
+    </bottom>
+</BorderPane>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="src.inventario.controller.producto.ProductoController">
+    <center>
+        <TableView fx:id="productoTable" prefHeight="400.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="descripcionColumn" text="Descripción" />
+                <TableColumn fx:id="eanColumn" text="EAN" />
+                <TableColumn fx:id="rfidColumn" text="RFID Key" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+            <Button text="Crear" onAction="#handleCrear" />
+            <Button text="Modificar" onAction="#handleModificar" />
+            <Button text="Eliminar" onAction="#handleEliminar" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10" style="-fx-padding: 10;">
+    <Label text="Numeración:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+    <TextField fx:id="numeracionField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+    <Label text="Descripción:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+    <TextField fx:id="descripcionField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+    <Label text="IP:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+    <TextField fx:id="ipField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+</GridPane>
+
