@@ -18,4 +18,6 @@ module src.inventario {
     opens src.inventario.controller.aula to javafx.fxml;
     exports src.inventario.controller.producto;
     opens src.inventario.controller.producto to javafx.fxml;
+    exports src.inventario.controller.marcaje;
+    opens src.inventario.controller.marcaje to javafx.fxml;
 }

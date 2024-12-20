@@ -39,12 +39,15 @@ public class ProductoController {
 
     private void loadProductos() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            List<Producto> productos = session.createQuery("from Producto", Producto.class).list();
+            List<Producto> productos = session.createQuery(
+                    "select distinct p from Producto p left join fetch p.categorias", Producto.class
+            ).list();
             productoTable.getItems().setAll(productos);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     private void handleCrear() {

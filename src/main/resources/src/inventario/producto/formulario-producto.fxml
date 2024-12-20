@@ -11,4 +11,10 @@
 
     <Label text="RFID Key:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
     <TextField fx:id="rfidField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+    <Label text="Categorías:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+    <ListView fx:id="categoriaListView" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
 </GridPane>
+
+

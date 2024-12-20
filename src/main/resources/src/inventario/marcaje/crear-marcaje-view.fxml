@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="src.inventario.controller.marcaje.CrearMarcajeController" spacing="10" alignment="CENTER">
+    <Label text="Crear Marcaje" />
+    <fx:include source="formulario-marcaje.fxml" fx:id="formularioMarcaje" />
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Guardar" onAction="#handleGuardar" />
+        <Button text="Cancelar" onAction="#handleCancelar" />
+    </HBox>
+</VBox>
+
+

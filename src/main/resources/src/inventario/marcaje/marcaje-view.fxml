@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="src.inventario.controller.marcaje.MarcajeController">
+    <center>
+        <TableView fx:id="marcajeTable" prefHeight="400.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="productoColumn" text="Producto" />
+                <TableColumn fx:id="aulaColumn" text="Aula" />
+                <TableColumn fx:id="tipoColumn" text="Tipo" />
+                <TableColumn fx:id="timeStampColumn" text="Fecha/Hora" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="center">
+            <Button text="Crear" onAction="#handleCrear" />
+            <Button text="Modificar" onAction="#handleModificar" />
+            <Button text="Eliminar" onAction="#handleEliminar" />
+        </HBox>
+    </bottom>
+</BorderPane>
+

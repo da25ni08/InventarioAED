@@ -1,16 +1,18 @@
 package src.inventario.model;
 
 import jakarta.persistence.*;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "productos", schema = "inventario")
 public class Producto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IdProducto", nullable = false)
     private Integer id;
+
 
     @Column(name = "Descripcion", nullable = false)
     private String descripcion;
@@ -21,11 +23,16 @@ public class Producto {
     @Column(name = "keyRFID", nullable = false, length = 10)
     private String keyRFID;
 
-    @OneToMany(mappedBy = "idProducto")
-    private Set<Marcaje> marcajes = new LinkedHashSet<>();
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "ProductoCategoria",
+            joinColumns = @JoinColumn(name = "idProducto"),
+            inverseJoinColumns = @JoinColumn(name = "idCategoria")
+    )
+    private Set<Categoria> categorias = new HashSet<>();
 
-    public Producto() {
-    }
+
+    public Producto() {}
 
     public Producto(String descripcion, Integer ean13, String keyRFID) {
         this.descripcion = descripcion;
@@ -65,11 +72,11 @@ public class Producto {
         this.keyRFID = keyRFID;
     }
 
-    public Set<Marcaje> getMarcajes() {
-        return marcajes;
+    public Set<Categoria> getCategorias() {
+        return categorias;
     }
 
-    public void setMarcajes(Set<Marcaje> marcajes) {
-        this.marcajes = marcajes;
+    public void setCategorias(Set<Categoria> categorias) {
+        this.categorias = categorias;
     }
 }
